@@ -1,0 +1,24 @@
+package com.turkcell.rentacar.core.entities;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.LocalDateTime;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@MappedSuperclass
+public class BaseEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
+    @Column(name = "createdDate")
+    private LocalDateTime createdDate;
+    @Column(name = "updatedDate")
+    private LocalDateTime updatedDate;
+    @Column(name = "deletedDate")
+    private LocalDateTime deletedDate;
+
+}
